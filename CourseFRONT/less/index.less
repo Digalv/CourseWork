@@ -1,0 +1,43 @@
+// out: ../css/index.css
+@color_shadow: #888888; //shadow_input
+@color_bg: rgb(61, 193, 195);
+@welcome_width: 400px;
+@font_size: 25px;
+
+.welcome{
+    font-size: @font_size;
+    background-color: rgb(147, 192, 171);
+    border-radius: 20px;
+    width: @welcome_width;
+    margin: 0 auto;
+    position: absolute;
+    padding-bottom: 20px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;
+    
+    .form{
+        width: 90%;
+    }
+    .join{
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        color: #000;
+        text-decoration: none;
+        background-color: @color_bg;
+        border-radius: 10px;
+        width: 60%;
+    }
+    .join:hover{
+        background-color: rgba(178, 28, 28, 0.698);
+        box-shadow: 0px 5px 15px @color_shadow;
+        transform: translateY(-3px);
+        color: white;
+    }
+    .incorrect{
+        display: none;
+    }
+}

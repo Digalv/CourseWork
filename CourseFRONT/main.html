@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script defer src="js/main.js"></script>
+    <script defer src="js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="content">
+            <div class="show_head">
+                <span class="h2 show_head_title">Title, Capital, Population, Square(km2), Continent, Language</span>
+                <div class="search mt-3">
+                    <select name="" id="" class="form-select mx-2 search_language">
+                        <option selected value="">Default</option>
+                        <option value="">English</option>
+                        <option value="">Germany</option>
+                        <option value="">French</option>
+                        <option value="">Russian</option>
+                    </select>
+                    <input class="form-control mx-2 search_capital" type="text" name="" id="" placeholder="Search by capital">
+                    <input class="form-control mx-2 search_square" type="number" min="0" name="" id="" placeholder="Search by square">
+                </div>
+            </div>
+            <div class="show table">
+            </div>
+        </div>
+        <div class="filter_menu">
+            <div class="add_del mb-2">
+                <a href="#" class="add btn btn-secondary">+</a>
+                <a href="#" class=" del btn btn-secondary ms-1">−</a>
+            </div>
+            <div class="filters">
+                <div class="filter">
+                    By population
+                    <input type="checkbox" class="filter_population" id="">
+                </div>
+                <div class="filter">
+                    By area
+                    <input type="checkbox" class="filter_square" id="">
+                </div>
+                <div class="filter mt-2">
+                    <select name="" id="" class="filter_continent">
+                        <option selected value="">Default</option>
+                        <option value="">Europe</option>
+                        <option value="">Asia</option>
+                        <option value="">Africa</option>
+                        <option value="">North America</option>
+                        <option value="">South America</option>
+                        <option value="">Australia</option>
+                    </select>
+                </div>
+            </div>
+            <div class="edit_member_text">Enter title to edit country</div>
+            <input class="edit_member" type="text">
+        </div>
+        <div class="modal_add">
+            <div class="overlay"></div>
+            <div class="box">
+                <div class="content_modal">
+                    <h1>Enter the data: </h1>
+                    <p class="modal_name modul_title">
+                        Title:
+                        <span class="modul_warning">(First letter upper case, withoun number)</span>
+                    </p>
+                    <input type="text" class="modal_input_name">
+                    <p class="modal_capital modul_title">
+                        Capital:
+                        <span class="modul_warning">(First letter upper case, withoun number)</span>
+                    </p>
+                    <input type="text" class="modal_input_capital">
+                    <p class="modal_population modul_title">
+                        Population:
+                        <span class="modul_warning">(Integer larger 0)</span>
+                    </p>
+                    <input type="number" class="modal_input_population">
+                    <p class="modal_square modul_title">
+                        Square:
+                        <span class="modul_warning">(Number larger 0)</span>
+                    </p>
+                    <input type="number" class="modal_input_square">
+                    <p class="modal_continent modul_title">
+                        Continent:
+                    </p>
+                    <select name="" id="" class="modal_input_continent">
+                        <option selected value="">Europe</option>
+                        <option value="">Asia</option>
+                        <option value="">Africa</option>
+                        <option value="">North America</option>
+                        <option value="">South America</option>
+                        <option value="">Australia</option>
+                    </select>
+                    <p class="modal_continent modul_title">
+                        Language:
+                    </p>
+                    <select name="" id="" class="modal_input_language">
+                        <option value="">English</option>
+                        <option value="">Germany</option>
+                        <option value="">French</option>
+                        <option value="">Russian</option>
+                    </select>
+                    <a href="#" class="modul_add_send">
+                        Add
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="modal_delete">
+            <div class="overlay"></div>
+            <div class="box">
+                <div class="content_modal">
+                    <h1 class="modal_delete_content_title">Are you sure you want to delete?</h1>
+                    <div class="mt-3">
+                        <span class="modal_delete_content_help">Enter the minimal population: </span>
+                        <input type="number" class="modal_delete_input">
+                    </div>
+                    <a href="#" class="modal_delete_send mt-3 btn">
+                        Delete
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="modal_edit">
+            <div class="overlay"></div>
+            <div class="box">
+                <div class="content_modal">
+                    <h1>Edit the data: </h1>
+                    <p class="modal_name modul_title">
+                        Title:
+                        <span class="modul_warning">(First letter upper case, withoun number)</span>
+                    </p>
+                    <input type="text" class="modal_input_name_edit">
+                    <p class="modal_capital modul_title">
+                        Capital:
+                        <span class="modul_warning">(First letter upper case, withoun number)</span>
+                    </p>
+                    <input type="text" class="modal_input_capital_edit">
+                    <p class="modal_population modul_title">
+                        Population:
+                        <span class="modul_warning">(Integer larger 0)</span>
+                    </p>
+                    <input type="number" class="modal_input_population_edit">
+                    <p class="modal_square modul_title">
+                        Square:
+                        <span class="modul_warning">(Number larger 0)</span>
+                    </p>
+                    <input type="number" class="modal_input_square_edit">
+                    <p class="modal_continent modul_title">
+                        Continent:
+                    </p>
+                    <select name="" id="" class="modal_input_continent_edit">
+                        <option selected value="">Europe</option>
+                        <option value="">Asia</option>
+                        <option value="">Africa</option>
+                        <option value="">North America</option>
+                        <option value="">South America</option>
+                        <option value="">Australia</option>
+                    </select>
+                    <p class="modal_continent modul_title">
+                        Language:
+                    </p>
+                    <select name="" id="" class="modal_input_language_edit">
+                        <option value="">English</option>
+                        <option value="">Germany</option>
+                        <option value="">French</option>
+                        <option value="">Russian</option>
+                    </select>
+                    <a href="#" class="modal_edit_send">
+                        Edit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
