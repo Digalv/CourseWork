@@ -32,10 +32,12 @@ function byField(field) {
 }
 
 function filter(category) {
-    JsonArr.sort(byField(category));
+    let result = JsonArr.slice();
+    result.sort(byField(category));
     if (category == 'title' || category == 'capital') {
-        JsonArr.reverse();
+        result.reverse();
     }
+    return result;
 }
 
 function render(array) {
@@ -46,7 +48,7 @@ function render(array) {
 }
 
 
-filter("title");
+//filter("title");
 render(JsonArr);
 /* */
 /*Обработка чекбокса */
@@ -54,11 +56,9 @@ let click_filter_population = 0;
 document.querySelector('.filter_population').addEventListener('change', function() {
     click_filter_population++;
     if (click_filter_population % 2 == 1) {
-        filter('population');
-        render(JsonArr);
+        render(filter('population'));
     } else {
-        filter('title');
-        render(JsonArr);
+        render(filter('title'));
     }
 })
 
@@ -66,11 +66,9 @@ let click_filter_square = 0;
 document.querySelector('.filter_square').addEventListener('change', function() {
         click_filter_square++;
         if (click_filter_square % 2 == 1) {
-            filter('square');
-            render(JsonArr);
+            render(filter('square'));
         } else {
-            filter('title');
-            render(JsonArr);
+            render(filter('title'));
         }
     })
     /* */
