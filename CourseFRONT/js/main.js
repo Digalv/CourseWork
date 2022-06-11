@@ -245,13 +245,10 @@ document.querySelector('.modal_edit_send').addEventListener('click', function() 
     document.querySelector('.modal_input_square_edit').value = "";
     document.querySelector('.modal_input_population_edit').value = "";
 
-    console.log(result);
-    document.querySelector('.modal_edit').classList.remove('visibl');
-    JsonArr[edit_id] = result;
 
     fetch(HOST + "edit=1", {
         method: 'POST',
-        body: JSON.stringify(JsonArr),
+        body: [edit_id, JSON.stringify(result)],
     }).then(response =>
         response.json().then(data => ({
             data: data,
@@ -259,8 +256,9 @@ document.querySelector('.modal_edit_send').addEventListener('click', function() 
         })).then(res => {
             if (JSON.stringify(res.data) == '{"Correct":"1"}') {
                 document.querySelector('.modal_edit').classList.remove('visibl');
+                JsonArr[edit_id] = result;
                 render(JsonArr);
-                alert("Edition successful");
+                alert("Editing successfully")
             } else {
                 alert("Incorrect data, try again")
             }
